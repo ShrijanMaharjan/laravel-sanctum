@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     //
+    protected $fillable = [
+        'title',
+        'description',
+        'status',
+    ];
     public function users()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }
